@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 
@@ -136,8 +136,11 @@
 
 /* Grid with radial fade */
 .bg-grid-pattern-fade {
-  background-image:
-    linear-gradient(to right, oklch(0.5 0 0 / 0.035) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      oklch(0.5 0 0 / 0.035) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, oklch(0.5 0 0 / 0.035) 1px, transparent 1px);
   background-size: 24px 24px;
   mask-image: radial-gradient(
@@ -148,8 +151,11 @@
 }
 
 .dark .bg-grid-pattern-fade {
-  background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.02) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      oklch(1 0 0 / 0.02) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, oklch(1 0 0 / 0.02) 1px, transparent 1px);
 }
 

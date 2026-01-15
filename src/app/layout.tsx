@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Moldable - Personal software. Built for change.",
-  description: "Your personal operating system for software that doesn't exist yet.",
+  description:
+    "Your personal operating system for software that doesn't exist yet.",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" forcedTheme="dark">
           {children}
         </ThemeProvider>
       </body>
