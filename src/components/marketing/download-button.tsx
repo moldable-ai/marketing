@@ -2,9 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Download, ChevronDown, Apple, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 type Platform = "mac-arm64" | "mac-intel" | "windows" | "linux" | "unknown";
 
@@ -98,17 +104,14 @@ function detectPlatform(): Platform {
 
 interface DownloadButtonProps {
   size?: "default" | "lg";
-  showArrow?: boolean;
   className?: string;
 }
 
 export function DownloadButton({
   size = "default",
-  showArrow = false,
   className,
 }: DownloadButtonProps) {
   const [detectedPlatform, setDetectedPlatform] = useState<Platform>("unknown");
-  const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -144,107 +147,80 @@ export function DownloadButton({
     : "https://github.com/moldable-ai/moldable/releases/latest";
 
   return (
-    <div className="relative z-50">
-      <div
+    <div
+      className={cn(
+        "inline-flex overflow-hidden rounded-lg bg-primary text-primary-foreground",
+        size === "lg" && "rounded-xl",
+        className
+      )}
+    >
+      {/* Main download button */}
+      <Link
+        href={downloadHref}
         className={cn(
-          "inline-flex overflow-hidden rounded-lg bg-primary text-primary-foreground",
-          size === "lg" && "rounded-xl",
-          className
+          "inline-flex flex-1 items-center gap-2 px-4 transition-colors hover:bg-primary-foreground/10",
+          size === "lg" ? "h-12 px-6 text-base" : "h-10"
         )}
       >
-        {/* Main download button */}
-        <Link
-          href={downloadHref}
-          className={cn(
-            "inline-flex items-center gap-2 px-4 transition-colors hover:bg-primary-foreground/10",
-            size === "lg" ? "h-12 px-6 text-base" : "h-10"
-          )}
-        >
-          {currentPlatform.icon}
-          <span className="font-medium">
-            {currentPlatform.available
-              ? currentPlatform.label
-              : `${currentPlatform.shortLabel} (Coming Soon)`}
-          </span>
-        </Link>
+        {currentPlatform.icon}
+        <span className="font-medium">
+          {currentPlatform.available
+            ? currentPlatform.label
+            : `${currentPlatform.shortLabel} (Coming Soon)`}
+        </span>
+      </Link>
 
-        {/* Divider */}
-        <div className="my-2 w-px bg-primary-foreground/20" />
+      {/* Divider */}
+      <div className="my-2 w-px shrink-0 bg-primary-foreground/20" />
 
-        {/* Dropdown trigger */}
-        <button
-          type="button"
-          className={cn(
-            "inline-flex items-center px-3 transition-colors hover:bg-primary-foreground/10",
-            size === "lg" ? "h-12" : "h-10"
-          )}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-haspopup="true"
-        >
-          <ChevronDown
+      {/* Dropdown trigger */}
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button
+            type="button"
             className={cn(
-              "size-4 transition-transform",
-              isOpen && "rotate-180"
+              "inline-flex shrink-0 items-center px-3 transition-colors hover:bg-primary-foreground/10 focus:outline-none",
+              size === "lg" ? "h-12" : "h-10"
             )}
-          />
-        </button>
-      </div>
-
-      {/* Dropdown menu */}
-      {isOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-99"
-            onClick={() => setIsOpen(false)}
-          />
-
-          {/* Menu */}
-          <div className="absolute right-0 z-100 mt-2 w-64 overflow-hidden rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-xl">
-            <div className="p-1">
-              {otherPlatforms.map((platform) => (
-                <Link
-                  key={platform.platform}
-                  href={
-                    platform.available
-                      ? `/download/${platform.platform}`
-                      : "https://github.com/moldable-ai/moldable/releases/latest"
-                  }
-                  className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors",
-                    platform.available
-                      ? "hover:bg-accent"
-                      : "text-muted-foreground"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {platform.icon}
-                  <span>
-                    {platform.shortLabel}
-                    {!platform.available && (
-                      <span className="ml-2 text-xs text-muted-foreground">
-                        Coming soon
-                      </span>
-                    )}
-                  </span>
-                </Link>
-              ))}
-            </div>
-
-            <div className="border-t border-border p-1">
+          >
+            <ChevronDown className="size-4" />
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-56">
+          {otherPlatforms.map((platform) => (
+            <DropdownMenuItem key={platform.platform} asChild disabled={!platform.available}>
               <Link
-                href="https://github.com/moldable-ai/moldable/releases/latest"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-                onClick={() => setIsOpen(false)}
+                href={
+                  platform.available
+                    ? `/download/${platform.platform}`
+                    : "#"
+                }
+                className="flex items-center gap-3"
               >
-                <Download className="size-4" />
-                View all releases
+                {platform.icon}
+                <span>
+                  {platform.shortLabel}
+                  {!platform.available && (
+                    <span className="ml-2 text-xs text-muted-foreground">
+                      Coming soon
+                    </span>
+                  )}
+                </span>
               </Link>
-            </div>
-          </div>
-        </>
-      )}
+            </DropdownMenuItem>
+          ))}
+          <DropdownMenuSeparator />
+          <DropdownMenuItem asChild>
+            <Link
+              href="https://github.com/moldable-ai/moldable/releases/latest"
+              className="flex items-center gap-3"
+            >
+              <Download className="size-4" />
+              View all releases
+            </Link>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }

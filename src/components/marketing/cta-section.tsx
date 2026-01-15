@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 export function CtaSection() {
   return (
     <section className="relative overflow-hidden py-24 md:py-32">
-      <div className="relative mx-auto max-w-4xl px-6">
+      <div className="relative mx-auto max-w-5xl px-6">
         {/* Main CTA card - Glass style */}
         <div className="relative overflow-hidden rounded-2xl bg-linear-to-br from-white/10 via-white/5 to-transparent p-8 backdrop-blur-xl md:rounded-3xl md:p-12 dark:from-white/10 dark:via-white/5 dark:to-transparent">
           {/* Gradient border overlay */}
