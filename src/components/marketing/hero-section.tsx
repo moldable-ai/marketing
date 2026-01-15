@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { DownloadButton } from "@/components/marketing/download-button";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -47,20 +47,10 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div
-            className="animate-fade-in-blur mt-8 flex flex-col gap-3 sm:flex-row"
+            className="animate-fade-in-blur relative z-20 mt-8 flex flex-col gap-3 sm:flex-row"
             style={{ animationDelay: "300ms" }}
           >
-            <Button
-              size="lg"
-              className="group h-12 gap-2 rounded-xl px-6 text-base"
-              asChild
-            >
-              <Link href="https://github.com/moldable-ai/moldable">
-                <Download className="size-4" />
-                Download Moldable
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+            <DownloadButton size="lg" className="rounded-xl" />
             <Button
               size="lg"
               variant="outline"
@@ -76,7 +66,7 @@ export function HeroSection() {
 
         {/* Hero visualization */}
         <div
-          className="animate-fade-in-blur mt-16 flex items-center justify-center md:mt-24"
+          className="animate-fade-in-blur relative z-10 mt-16 flex items-center justify-center md:mt-24"
           style={{ animationDelay: "400ms" }}
         >
           <HeroVisualization />

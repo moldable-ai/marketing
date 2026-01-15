@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { DownloadButton } from "@/components/marketing/download-button";
+import { ArrowRight } from "lucide-react";
 
 export function CtaSection() {
   return (
@@ -65,13 +66,7 @@ export function CtaSection() {
                     Get the desktop app for macOS and start creating apps in
                     minutes. Windows and Linux coming soon.
                   </p>
-                  <Button className="group/btn w-full gap-2 rounded-lg" asChild>
-                    <Link href="https://github.com/moldable-ai/moldable/releases">
-                      <Download className="size-4" />
-                      Download for Free
-                      <ArrowRight className="size-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Link>
-                  </Button>
+                  <DownloadButton className="w-full rounded-lg" />
                 </div>
               </div>
 

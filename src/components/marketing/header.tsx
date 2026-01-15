@@ -81,7 +81,7 @@ export function Header() {
             {/* Desktop CTA */}
             <div className="hidden items-center gap-3 md:flex">
               <Button size="sm" className="gap-2 rounded-lg" asChild>
-                <Link href="https://github.com/moldable-ai/moldable/releases">
+                <Link href="/download/mac-arm64">
                   <Download className="size-4" />
                   Download
                 </Link>
@@ -117,7 +117,7 @@ export function Header() {
                 </Link>
               ))}
               <Button size="sm" className="mt-2 w-full gap-2 rounded-lg" asChild>
-                <Link href="https://github.com/moldable-ai/moldable/releases">
+                <Link href="/download/mac-arm64">
                   <Download className="size-4" />
                   Download
                 </Link>
