@@ -14,6 +14,7 @@ This section is a convenience summary. The full Privacy Policy below controls.
 - We don't currently collect analytics or telemetry. If we add this in the future, it will be opt-in anonymous telemetry.
 - We don't have access to your locally stored apps, code, or personal data.
 - When you connect third-party services (AI providers, MCPs, etc.), those interactions are governed by each service's privacy policy.
+- **Google API data** (like Google Calendar) is stored locally on your device, not on our servers. Our use of Google data complies with [Google's Limited Use requirements](https://developers.google.com/terms/api-services-user-data-policy#limited-use).
 - You can contact **hello@moldable.sh** to exercise privacy rights or ask questions.
 
 ## 1. Who We Are (Data Controller)
@@ -89,18 +90,40 @@ Moldable may integrate with third-party services. When you use these integration
 
 We encourage you to review the privacy policies of any third-party services you use.
 
-## 7. Cookies and Tracking
+## 7. Google API Services
+
+When you connect Google services (such as Google Calendar) to Moldable, we access your Google data only as described below. Our use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
+
+### 7.1 Google Calendar
+
+When you connect your Google Calendar:
+
+- **What we access**: Calendar event data (event titles, times, locations, descriptions, attendees) from calendars you have access to.
+- **How we use it**: To display your calendar events within the Moldable Calendar app and enable you to create, edit, and delete events.
+- **Where it's stored**: Calendar data is cached locally on your device in `~/.moldable/`. We do not store your calendar data on our servers.
+- **How long we keep it**: Cached data is refreshed each time you use the app. You can disconnect your Google account at any time to remove stored tokens and cached data.
+
+### 7.2 Limited Use Disclosure
+
+Moldable's use and transfer to any other app of information received from Google APIs will adhere to [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes), including the Limited Use requirements:
+
+- We only use Google data to provide and improve the calendar features visible in Moldable.
+- We do not transfer Google data to third parties except as necessary to provide the service, for security purposes, or to comply with law.
+- We do not use Google data for advertising or to build advertising profiles.
+- Humans do not read your Google data unless you provide explicit consent, it's required for security/abuse investigation, or required by law.
+
+## 8. Cookies and Tracking
 
 The Moldable desktop application does not use cookies or tracking. Our website (moldable.sh) does not currently use cookies or analytics.
 
 If we add analytics to the website in the future, we will update this policy and use privacy-respecting, anonymous methods.
 
-## 8. Data Retention
+## 9. Data Retention
 
 - **Local data**: Data stored on your machine is retained until you delete it.
 - **Support communications**: We retain support communications for as long as reasonably necessary to provide support and maintain records.
 
-## 9. Security
+## 10. Security
 
 We implement reasonable security measures to protect information we collect. However, no method of transmission or storage is 100% secure.
 
@@ -110,9 +133,9 @@ Your local data is protected by your device's security measures. We recommend:
 - Using strong device passwords/encryption
 - Being cautious about which apps and skills you install
 
-## 10. Your Rights and Choices
+## 11. Your Rights and Choices
 
-### 10.1 Local data
+### 11.1 Local data
 
 You have full control over your local data. You can:
 
@@ -120,11 +143,11 @@ You have full control over your local data. You can:
 - Export your data at any time
 - Uninstall the application and delete all local data
 
-### 10.2 Future telemetry
+### 11.2 Future telemetry
 
 If we add anonymous telemetry in the future, it will be opt-in and you will be able to control it in Moldable settings.
 
-### 10.3 Privacy rights
+### 11.3 Privacy rights
 
 Depending on where you live, you may have rights to:
 
@@ -135,27 +158,27 @@ Depending on where you live, you may have rights to:
 
 To exercise these rights, contact us at **hello@moldable.sh**.
 
-### 10.4 EEA/UK residents
+### 11.4 EEA/UK residents
 
 If you are in the European Economic Area or United Kingdom, you may have additional rights under GDPR, including the right to lodge a complaint with your local data protection authority.
 
-### 10.5 California residents
+### 11.5 California residents
 
 If you are a California resident, you may have rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect and request deletion. We do not sell personal information.
 
-## 11. International Transfers
+## 12. International Transfers
 
 If we transfer personal information outside of your country, we use appropriate safeguards as required by applicable law.
 
-## 12. Children's Privacy
+## 13. Children's Privacy
 
 The Service is not directed to children under 18, and we do not knowingly collect personal information from children.
 
-## 13. Changes to This Policy
+## 14. Changes to This Policy
 
 We may update this Privacy Policy from time to time. The "Last updated" date indicates when changes were made. We will take reasonable steps to notify you of material changes.
 
-## 14. Contact
+## 15. Contact
 
 Desiderata LLC  
 4607 Library Road, Ste 220 PMB 630  
