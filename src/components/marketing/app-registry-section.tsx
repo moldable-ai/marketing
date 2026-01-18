@@ -49,6 +49,15 @@ const apps = [
     category: "productivity",
   },
   {
+    id: "time-tracker",
+    name: "Time Tracker",
+    description:
+      "Track time spent on projects and tasks with simple start/stop controls",
+    icon: "/apps/time-tracker-icon.png",
+    image: "/apps/time-tracker.png",
+    category: "productivity",
+  },
+  {
     id: "git-flow",
     name: "Git",
     description:
@@ -79,9 +88,9 @@ export function AppRegistrySection() {
         </div>
 
         {/* Apps grid - Bento style */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-4">
           {apps.map((app) => (
-            <GlassCard key={app.id}>
+            <GlassCard key={app.id} className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)]">
               <div className="flex items-start gap-4">
                 <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 overflow-hidden">
                   <Image
@@ -117,9 +126,9 @@ export function AppRegistrySection() {
   );
 }
 
-function GlassCard({ children }: { children: React.ReactNode }) {
+function GlassCard({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-linear-to-br from-white/8 via-white/2 to-transparent p-5 backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-xl before:border before:border-white/8 before:bg-linear-to-br before:from-white/12 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100 dark:from-white/8 dark:via-white/2 dark:to-transparent dark:before:border-white/8">
+    <div className={`group relative overflow-hidden rounded-xl bg-linear-to-br from-white/8 via-white/2 to-transparent p-5 backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-xl before:border before:border-white/8 before:bg-linear-to-br before:from-white/12 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100 dark:from-white/8 dark:via-white/2 dark:to-transparent dark:before:border-white/8 ${className ?? ""}`}>
       {/* Gradient border overlay */}
       <div
         className="pointer-events-none absolute inset-0 rounded-xl"
