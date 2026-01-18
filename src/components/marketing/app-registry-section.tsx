@@ -58,6 +58,15 @@ const apps = [
     category: "productivity",
   },
   {
+    id: "affirmations",
+    name: "Daily Affirmations",
+    description:
+      "Start your day with positive affirmations and motivational reminders",
+    icon: "/apps/affirmations-icon.png",
+    image: "/apps/affirmations.png",
+    category: "productivity",
+  },
+  {
     id: "git-flow",
     name: "Git",
     description:
