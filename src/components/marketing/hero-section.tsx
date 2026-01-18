@@ -98,12 +98,12 @@ function HeroVisualization() {
         />
 
         {/* Hero Image */}
-        <div className="aspect-2378/1312 overflow-hidden">
+        <div className="aspect-2400/1472 overflow-hidden">
           <Image
             src="/hero.png"
             alt="Moldable Interface"
-            width={2378}
-            height={1312}
+            width={2400}
+            height={1472}
             className="h-full w-full object-cover"
             priority
           />
