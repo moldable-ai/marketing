@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: 2026-01-15
+Last updated: 2026-01-19
 
 This Privacy Policy explains how **Desiderata LLC** ("Desiderata," "we," "us," or "our") collects, uses, and shares information when you use Moldable (the "Service").
 
@@ -11,7 +11,7 @@ Moldable is designed as a **local-first application**—most of your data stays 
 This section is a convenience summary. The full Privacy Policy below controls.
 
 - Moldable is local-first: your apps, data, and configurations are stored on your machine, not our servers.
-- We don't currently collect analytics or telemetry. If we add this in the future, it will be opt-in anonymous telemetry.
+- Our website (moldable.sh) uses **Plausible Analytics** (cookie-less, privacy-respecting) to understand basic website usage.
 - We don't have access to your locally stored apps, code, or personal data.
 - When you connect third-party services (AI providers, MCPs, etc.), those interactions are governed by each service's privacy policy.
 - **Google API data** (like Google Calendar) is stored locally on your device, not on our servers. Our use of Google data complies with [Google's Limited Use requirements](https://developers.google.com/terms/api-services-user-data-policy#limited-use).
@@ -41,7 +41,7 @@ Moldable is designed to keep your data on your machine:
 
 ### 3.2 Information we may collect automatically
 
-- **No analytics currently**: We do not currently collect usage analytics or telemetry. If we add anonymous telemetry in the future, it will be clearly disclosed and opt-in.
+- **Website analytics**: Our website (moldable.sh) uses **Plausible Analytics** to measure aggregate website usage (for example, page views and referrers). Plausible is designed to be cookie-less and to avoid collecting personal data. Learn more: [https://plausible.io/data-policy](https://plausible.io/data-policy).
 - **Download metrics**: When you download the application from GitHub or other distribution platforms, those platforms may collect basic metrics (such as download counts).
 
 ### 3.3 Information we do NOT collect
@@ -114,9 +114,9 @@ Moldable's use and transfer to any other app of information received from Google
 
 ## 8. Cookies and Tracking
 
-The Moldable desktop application does not use cookies or tracking. Our website (moldable.sh) does not currently use cookies or analytics.
+The Moldable desktop application does not use cookies or tracking.
 
-If we add analytics to the website in the future, we will update this policy and use privacy-respecting, anonymous methods.
+Our website (moldable.sh) uses **Plausible Analytics**, which is designed to operate **without cookies** and without tracking you across sites. If we materially change our website analytics practices, we will update this policy.
 
 ## 9. Data Retention
 

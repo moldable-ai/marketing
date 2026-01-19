@@ -1,6 +1,6 @@
 # Terms of Service
 
-Last updated: 2026-01-15
+Last updated: 2026-01-19
 
 These Terms of Service ("Terms") govern your access to and use of Moldable (the "Service"). The Service is operated by **Desiderata LLC**, a Pennsylvania limited liability company ("Desiderata," "we," "us," or "our").
 
@@ -19,7 +19,7 @@ This section is a convenience summary. The full Terms below control.
 
 ## Privacy
 
-Our collection and use of personal information is described in our [Privacy Policy](/legal/privacy). Moldable is primarily a local-first application—most data stays on your machine.
+Our collection and use of personal information is described in our [Privacy Policy](/legal/privacy). Moldable is primarily a local-first application—e.g. data stays on your machine. Our website analytics practices (if any) are also described in the Privacy Policy.
 
 ## 1. Definitions
 
