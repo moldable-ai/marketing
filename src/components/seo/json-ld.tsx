@@ -24,7 +24,7 @@ export function OrganizationJsonLd({
     url,
     logo: `${url}/logo.svg`,
     description:
-      "Personal software. Built for change. Build apps that work exactly how you think — powered by AI, shaped by conversation.",
+      "Personal software. Built for change. Build local apps that work exactly how you think — powered by AI, shaped by conversation.",
     sameAs: [
       "https://x.com/moldableai",
       "https://github.com/moldable-ai",
@@ -60,7 +60,7 @@ export function WebSiteJsonLd({ url = APP_URL }: WebSiteJsonLdProps = {}) {
     name: "Moldable",
     url,
     description:
-      "Personal software. Built for change. Build apps that work exactly how you think — powered by AI, shaped by conversation.",
+      "Personal software. Built for change. Build local apps that work exactly how you think — powered by AI, shaped by conversation.",
   };
 
   return (

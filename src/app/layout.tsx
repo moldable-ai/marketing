@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Moldable",
   },
   description:
-    "Build apps that work exactly how you think — powered by AI, shaped by conversation. Download Moldable for macOS and Windows.",
+    "Build local apps that work exactly how you think — powered by AI, shaped by conversation. Download Moldable for macOS.",
   keywords: [
     // Core product
     "moldable",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     siteName: "Moldable",
     title: "Moldable - Personal software. Built for change.",
     description:
-      "Build apps that work exactly how you think — powered by AI, shaped by conversation.",
+      "Build local apps that work exactly how you think — powered by AI, shaped by conversation.",
   },
   twitter: {
     card: "summary_large_image",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     creator: "@moldableai",
     title: "Moldable - Personal software. Built for change.",
     description:
-      "Build apps that work exactly how you think — powered by AI, shaped by conversation.",
+      "Build local apps that work exactly how you think — powered by AI, shaped by conversation.",
   },
   robots: {
     index: true,
