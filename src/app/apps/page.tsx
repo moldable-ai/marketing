@@ -9,7 +9,7 @@ import { ArrowRight, Github, Sparkles } from "lucide-react";
 export const metadata: Metadata = {
   title: "Apps - Moldable",
   description:
-    "Explore the official Moldable starter apps. See what's possible, get inspired, and download Moldable to start building your own.",
+    "Explore the official Moldable starter apps. Install them in Moldable, or use them as inspiration to build your own version.",
 };
 
 export default function AppsPage() {
@@ -30,7 +30,7 @@ export default function AppsPage() {
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Each of these apps was created with a simple prompt. Browse them
-              for inspiration, or download Moldable to build your own.
+              for inspiration. Install it or build your own version.
             </p>
           </div>
 

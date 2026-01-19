@@ -96,7 +96,7 @@ export default async function AppPage({ params }: PageProps) {
                   The prompt that built this
                 </div>
                 <p className="mb-4 text-sm text-muted-foreground">
-                  This entire app was generated from a single prompt. Here's
+                  This entire app was generated in a few minutes. Here's
                   what we asked Moldable:
                 </p>
                 <PromptBox content={app.samplePrompt} />
@@ -105,11 +105,12 @@ export default async function AppPage({ params }: PageProps) {
               {/* CTA */}
               <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6">
                 <h3 className="text-lg font-semibold">
-                  Build your own version
+                  Install it or build your own version
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Download Moldable and use this prompt as inspiration — or
-                  describe something completely different. Your apps, your way.
+                  Install this app in Moldable, or use this prompt as a starting
+                  point to build something completely
+                  different. You have powers now, go use them.
                 </p>
                 <a
                   href="/#download"
