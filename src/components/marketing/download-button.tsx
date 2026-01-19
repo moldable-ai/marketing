@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Download, ChevronDown, Apple, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/lib/hooks/use-mobile";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -113,6 +114,7 @@ export function DownloadButton({
 }: DownloadButtonProps) {
   const [detectedPlatform, setDetectedPlatform] = useState<Platform>("unknown");
   const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setDetectedPlatform(detectPlatform());
@@ -145,6 +147,24 @@ export function DownloadButton({
   const downloadHref = currentPlatform.available
     ? `/download/${currentPlatform.platform}`
     : "https://github.com/moldable-ai/moldable/releases/latest";
+
+  // On mobile, show a simplified button with just "Download"
+  if (isMobile) {
+    return (
+      <Link
+        href={downloadHref}
+        className={cn(
+          "inline-flex items-center gap-2 rounded-lg bg-primary px-4 font-medium text-primary-foreground transition-colors hover:bg-primary/90",
+          size === "lg" && "h-12 rounded-xl px-6 text-base",
+          size === "default" && "h-10",
+          className
+        )}
+      >
+        <Download className="size-4" />
+        Download
+      </Link>
+    );
+  }
 
   return (
     <div

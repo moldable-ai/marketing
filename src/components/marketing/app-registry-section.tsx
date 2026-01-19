@@ -2,80 +2,9 @@
 
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ZoomableImage } from "@/components/ui/zoomable-image";
-
-const apps = [
-  {
-    id: "meetings",
-    name: "Meetings",
-    description:
-      "Record, transcribe, and summarize meetings with real-time AI transcription",
-    icon: "/apps/meetings-icon.png",
-    image: "/apps/meetings.png",
-    category: "productivity",
-  },
-  {
-    id: "scribo",
-    name: "Scribo Languages",
-    description: "Language learning journal with AI-powered translations",
-    icon: "/apps/scribo-icon.png",
-    image: "/apps/scribo.png",
-    category: "productivity",
-  },
-  {
-    id: "calendar",
-    name: "Calendar",
-    description: "Integrated calendar with Google Calendar connection",
-    icon: "/apps/calendar-icon.png",
-    image: "/apps/calendar.png",
-    category: "productivity",
-  },
-  {
-    id: "notes",
-    name: "Notes",
-    description:
-      "A Google Keep-style note taking app with pinning and markdown support",
-    icon: "/apps/notes-icon.png",
-    image: "/apps/notes.png",
-    category: "productivity",
-  },
-  {
-    id: "todo",
-    name: "Todo",
-    description:
-      "Simple task management with quick add and completion tracking",
-    icon: "/apps/todo-icon.png",
-    image: "/apps/todos.png",
-    category: "productivity",
-  },
-  {
-    id: "time-tracker",
-    name: "Time Tracker",
-    description:
-      "Track time spent on projects and tasks with simple start/stop controls",
-    icon: "/apps/time-tracker-icon.png",
-    image: "/apps/time-tracker.png",
-    category: "productivity",
-  },
-  {
-    id: "affirmations",
-    name: "Daily Affirmations",
-    description:
-      "Start your day with positive affirmations and motivational reminders",
-    icon: "/apps/affirmations-icon.png",
-    image: "/apps/affirmations.png",
-    category: "productivity",
-  },
-  {
-    id: "git-flow",
-    name: "Git",
-    description:
-      "Simple Git client for branch management, staging, and diffing",
-    icon: "/apps/git-icon.png",
-    image: "/apps/git.png",
-    category: "developer",
-  },
-];
+import { apps } from "@/data/apps";
 
 export function AppRegistrySection() {
   return (
@@ -99,35 +28,41 @@ export function AppRegistrySection() {
         {/* Apps grid - Bento style */}
         <div className="flex flex-wrap justify-center gap-4">
           {apps.map((app) => (
-            <GlassCard key={app.id} className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)]">
-              <div className="flex items-start gap-4">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 overflow-hidden">
-                  <Image
-                    src={app.icon}
-                    alt=""
-                    width={48}
-                    height={48}
-                    className="size-full object-cover"
-                  />
+            <Link
+              key={app.id}
+              href={`/apps/${app.id}`}
+              className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)]"
+            >
+              <GlassCard className="h-full transition-all hover:scale-[1.02]">
+                <div className="flex items-start gap-4">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 overflow-hidden">
+                    <Image
+                      src={app.icon}
+                      alt=""
+                      width={48}
+                      height={48}
+                      className="size-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold">{app.name}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                      {app.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold">{app.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                    {app.description}
-                  </p>
-                </div>
-              </div>
 
-              {/* App Screenshot with zoom on hover */}
-              <ZoomableImage
-                src={app.image}
-                alt={`${app.name} screenshot`}
-                width={2400}
-                height={1292}
-                zoomScale={2.5}
-                className="mt-5 aspect-2400/1292 rounded-lg border border-white/5 bg-white/3 dark:border-white/5 dark:bg-white/3"
-              />
-            </GlassCard>
+                {/* App Screenshot with zoom on hover */}
+                <ZoomableImage
+                  src={app.image}
+                  alt={`${app.name} screenshot`}
+                  width={2400}
+                  height={1292}
+                  zoomScale={2.5}
+                  className="mt-5 aspect-2400/1292 rounded-lg border border-white/5 bg-white/3 dark:border-white/5 dark:bg-white/3"
+                />
+              </GlassCard>
+            </Link>
           ))}
         </div>
       </div>

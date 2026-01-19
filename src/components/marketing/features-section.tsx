@@ -26,8 +26,7 @@ export function FeaturesSection() {
           <GlassCard className="md:col-span-4">
             <CardHeader icon={Cpu} title="Describe → Generate → Use" />
             <p className="mt-2 text-sm text-muted-foreground">
-              Tell Moldable what you need in natural language. The AI agent
-              writes the code, starts the server, and displays your app — all in
+              Just tell Moldable what you need and it creates it — all in
               seconds.
             </p>
             <div className="mt-5 flex flex-col gap-2">

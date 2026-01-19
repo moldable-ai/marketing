@@ -7,8 +7,9 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Apps", href: "#apps" },
-  { label: "Features", href: "#features" },
+  { label: "Apps", href: "/apps" },
+  { label: "Use Cases", href: "/use-cases" },
+  { label: "Features", href: "/#features" },
   { label: "GitHub", href: "https://github.com/moldable-ai/moldable" },
 ];
 

@@ -5,6 +5,7 @@ import {
   HardDrive,
   Lock,
   Shield,
+  ShieldAlert,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
@@ -53,7 +54,12 @@ export function SecuritySection() {
         </div>
 
         {/* Feature grid */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-4">
+          <SecurityCard
+            icon={Sparkles}
+            title="You own everything"
+            description="Your apps, your code, your data. Inspect, modify, export, or delete anything at any time."
+          />
           <SecurityCard
             icon={HardDrive}
             title="We don't store your data"
@@ -70,9 +76,9 @@ export function SecuritySection() {
             description="AI agent commands run in a sandbox with restricted network and filesystem access. Your SSH keys and sensitive files stay protected."
           />
           <SecurityCard
-            icon={Sparkles}
-            title="You own everything"
-            description="Your apps, your code, your data. Inspect, modify, export, or delete anything at any time."
+            icon={ShieldAlert}
+            title="Tool approvals"
+            description="Dangerous or unsandboxed commands require your explicit approval before execution. Review what the AI wants to do before it happens."
           />
         </div>
 
@@ -110,7 +116,7 @@ function SecurityCard({
   description: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-xl bg-linear-to-br from-white/8 via-white/2 to-transparent p-5 backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-xl before:border before:border-white/8 before:bg-linear-to-br before:from-white/12 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100 dark:from-white/8 dark:via-white/2 dark:to-transparent dark:before:border-white/8">
+    <div className="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] relative overflow-hidden rounded-xl bg-linear-to-br from-white/8 via-white/2 to-transparent p-5 backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-xl before:border before:border-white/8 before:bg-linear-to-br before:from-white/12 before:to-transparent before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100 dark:from-white/8 dark:via-white/2 dark:to-transparent dark:before:border-white/8">
       {/* Gradient border overlay */}
       <div
         className="pointer-events-none absolute inset-0 rounded-xl"

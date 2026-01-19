@@ -4,14 +4,16 @@ const footerSections = [
   {
     heading: "Product",
     links: [
-      { label: "Download", href: "https://github.com/moldable-ai/moldable/releases" },
-      { label: "Official Apps", href: "https://github.com/moldable-ai/apps" },
+      { label: "Apps", href: "/apps" },
+      { label: "Use Cases", href: "/use-cases" },
+      { label: "Download", href: "/#download" },
     ],
   },
   {
     heading: "Developers",
     links: [
       { label: "GitHub", href: "https://github.com/moldable-ai/moldable" },
+      { label: "Starter Apps", href: "https://github.com/moldable-ai/moldable-apps" },
     ],
   },
   {
