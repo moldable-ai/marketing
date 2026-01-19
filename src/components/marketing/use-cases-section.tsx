@@ -21,7 +21,9 @@ export function UseCasesSection() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Follow along with these guides to see how Moldable turns a simple
-            prompt into a fully functional app.
+            prompt into a fully functional app running locally on your machine.
+            <br /><br />
+            All software, data, and privacy are yours.
           </p>
         </div>
 

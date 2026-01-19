@@ -16,7 +16,7 @@ export function FeaturesSection() {
             Software that evolves with you
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Moldable flips the script on how software is built and owned.
+            Moldable flips the script on how software is built and owned. When you need it to change, just ask and Moldable is there to help.
           </p>
         </div>
 

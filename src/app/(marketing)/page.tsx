@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/marketing/hero-section";
 import { AppRegistrySection } from "@/components/marketing/app-registry-section";
 import { UseCasesSection } from "@/components/marketing/use-cases-section";
 import { FeaturesSection } from "@/components/marketing/features-section";
+import { MoldableAgentSection } from "@/components/marketing/moldable-agent-section";
 import { SecuritySection } from "@/components/marketing/security-section";
 import { CtaSection } from "@/components/marketing/cta-section";
 import { SiteFooter } from "@/components/marketing/site-footer";
@@ -31,6 +32,9 @@ export default function MarketingPage() {
         </div>
         <div id="features">
           <FeaturesSection />
+        </div>
+        <div id="moldable-agent">
+          <MoldableAgentSection />
         </div>
         <div id="security">
           <SecuritySection />

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { DownloadButton } from "@/components/marketing/download-button";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export function HeroSection() {
   return (
@@ -41,9 +42,13 @@ export function HeroSection() {
             style={{ animationDelay: "200ms" }}
           >
             Instead of buying apps or hoping someone builds what you need, you
-            describe it — and Moldable creates it. Everything runs locally on
-            your machine.
+            describe it — and Moldable creates it. Everything's local on your machine, so you own it.
           </p>
+
+          <p
+            className="animate-fade-in-blur mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
+            style={{ animationDelay: "200ms" }}
+          >You have powers now. Go use them.</p>
 
           {/* CTAs */}
           <div
@@ -80,6 +85,8 @@ export function HeroSection() {
 }
 
 function HeroVisualization() {
+  const [videoFailed, setVideoFailed] = useState(false);
+
   return (
     <div className="relative w-full max-w-4xl">
       {/* Main card - Linear glass style */}
@@ -98,15 +105,31 @@ function HeroVisualization() {
         />
 
         {/* Hero Image */}
-        <div className="aspect-2400/1472 overflow-hidden">
-          <Image
-            src="/hero.png"
-            alt="Moldable Interface"
-            width={2400}
-            height={1472}
-            className="h-full w-full object-cover"
-            priority
-          />
+        <div className="aspect-1764/1080 overflow-hidden">
+          {videoFailed ? (
+            <Image
+              src="/hero.png"
+              alt="Moldable Interface"
+              width={2400}
+              height={1472}
+              className="h-full w-full object-cover"
+              priority
+            />
+          ) : (
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/hero.png"
+              onError={() => setVideoFailed(true)}
+            >
+              <source src="https://moldable-assets.s3.us-east-1.amazonaws.com/welcome-to-moldable-web.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
       </div>
 

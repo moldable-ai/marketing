@@ -21,7 +21,7 @@ export function AppRegistrySection() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Install these official apps for free, or prompt Moldable to build
-            something entirely new for you. You have powers now, go use them.
+            something entirely new for you. Goodbye subscriptions — just imagine it, and Moldable will build it.
           </p>
         </div>
 
