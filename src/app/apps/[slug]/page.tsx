@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/marketing/header";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { PromptBox } from "@/components/use-cases";
+import { ZoomableImage } from "@/components/ui/zoomable-image";
 import { getAppById, getAllAppIds } from "@/data/apps";
 import { ArrowLeft, Download, Sparkles } from "lucide-react";
 
@@ -125,11 +126,12 @@ export default async function AppPage({ params }: PageProps) {
             {/* Right column - Screenshot */}
             <div className="lg:sticky lg:top-8">
               <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2">
-                <Image
+                <ZoomableImage
                   src={app.image}
                   alt={`${app.name} screenshot`}
-                  width={1200}
-                  height={646}
+                  width={2400}
+                  height={1292}
+                  zoomScale={2}
                   className="w-full rounded-lg"
                   priority
                 />

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/marketing/header";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { apps } from "@/data/apps";
+import { ZoomableImage } from "@/components/ui/zoomable-image";
 import { ArrowRight, Github, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,17 +43,6 @@ export default function AppsPage() {
                 href={`/apps/${app.id}`}
                 className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/8"
               >
-                {/* Image preview */}
-                <div className="mb-4 overflow-hidden rounded-lg border border-white/5">
-                  <Image
-                    src={app.image}
-                    alt={app.name}
-                    width={600}
-                    height={323}
-                    className="w-full transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-
                 {/* App icon and name */}
                 <div className="flex items-start gap-3">
                   <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg">
@@ -66,17 +56,29 @@ export default function AppsPage() {
                   </div>
                   <div className="flex-1">
                     <h2 className="text-lg font-semibold">{app.name}</h2>
-                    <p className="mt-1 text-sm text-muted-foreground">
+                    <p className="mt-1 line-clamp-2 text-sm text-muted-foreground min-h-[2.5rem]">
                       {app.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Category badge */}
-                <div className="mt-4">
+                <div className="mt-4 mb-4">
                   <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs font-medium capitalize text-muted-foreground">
                     {app.category}
                   </span>
+                </div>
+
+                {/* Image preview */}
+                <div className="aspect-video overflow-hidden rounded-lg border border-white/5">
+                  <ZoomableImage
+                    src={app.image}
+                    alt={app.name}
+                    width={2400}
+                    height={1350}
+                    zoomScale={2}
+                    className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
 
                 {/* Arrow indicator */}

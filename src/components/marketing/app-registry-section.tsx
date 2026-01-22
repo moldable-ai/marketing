@@ -46,21 +46,23 @@ export function AppRegistrySection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold">{app.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                    <p className="mt-1 line-clamp-2 text-sm text-muted-foreground leading-relaxed min-h-[2.5rem]">
                       {app.description}
                     </p>
                   </div>
                 </div>
 
                 {/* App Screenshot with zoom on hover */}
-                <ZoomableImage
-                  src={app.image}
-                  alt={`${app.name} screenshot`}
-                  width={2400}
-                  height={1292}
-                  zoomScale={2.5}
-                  className="mt-5 aspect-2400/1292 rounded-lg border border-white/5 bg-white/3 dark:border-white/5 dark:bg-white/3"
-                />
+                <div className="mt-5 aspect-video overflow-hidden rounded-lg border border-white/5 bg-white/3 dark:border-white/5 dark:bg-white/3">
+                  <ZoomableImage
+                    src={app.image}
+                    alt={`${app.name} screenshot`}
+                    width={2400}
+                    height={1350}
+                    zoomScale={2.5}
+                    className="size-full object-cover"
+                  />
+                </div>
               </GlassCard>
             </Link>
           ))}
