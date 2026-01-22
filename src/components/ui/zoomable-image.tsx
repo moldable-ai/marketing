@@ -11,6 +11,7 @@ interface ZoomableImageProps {
   height?: number;
   zoomScale?: number;
   className?: string;
+  priority?: boolean;
 }
 
 export function ZoomableImage({
@@ -20,6 +21,7 @@ export function ZoomableImage({
   height = 1292,
   zoomScale = 2.5,
   className,
+  priority = false,
 }: ZoomableImageProps) {
   const [transformOrigin, setTransformOrigin] = useState("50% 50%");
   const [isZoomed, setIsZoomed] = useState(false);
@@ -75,6 +77,7 @@ export function ZoomableImage({
           width={width}
           height={height}
           className="h-full w-full object-cover"
+          priority={priority}
         />
       </div>
     </div>
