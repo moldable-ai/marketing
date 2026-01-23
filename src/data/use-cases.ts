@@ -797,6 +797,89 @@ Events are fetched from Google but displayed locally. Nothing is stored on exter
   relatedSlugs: ["build-a-meeting-notes-app", "build-a-time-tracker"],
 };
 
+const codeEditorUseCase: UseCase = {
+  slug: "build-a-custom-ide",
+  title: "Build a Custom IDE",
+  description:
+    "Create a full-featured development environment with a file tree, multi-tab editor, and integrated browser preview.",
+  author: "Moldable",
+  category: "Developer Tools",
+  features: ["Monaco Editor", "File Tree", "Browser Preview"],
+  starterApp: {
+    name: "Code Editor",
+    description:
+      "Start with our official Code Editor app and customize it into your perfect IDE.",
+    icon: "/apps/code-icon.png",
+    image: "/apps/code.png",
+    appId: "code",
+  },
+  steps: [
+    {
+      title: "Describe your ideal IDE",
+      content: `Every developer has a preferred setup. Describe the exact layout and features you need for your workflow — from specific language support to integrated tools.`,
+      prompts: [
+        {
+          content: `Build me a code editor app that:
+- Has a file tree to navigate projects
+- Supports multiple tabs with syntax highlighting using Monaco
+- Includes a command palette for quick actions
+- Has an integrated browser preview for web projects
+- Supports file operations like create, rename, and delete
+- Persists open tabs and project state`,
+        },
+      ],
+    },
+    {
+      title: "Watch Moldable build the workspace",
+      content: `Moldable sets up a professional development environment, integrating the same editor engine that powers VS Code.`,
+      responseTitle: "From Moldable",
+      response: `I'll create a full-featured IDE with a file tree and browser preview.
+
+**Setting up the app...**
+
+✓ Integrated Monaco Editor for high-performance editing
+✓ Built recursive file tree with file system access
+✓ Added multi-tab management with state persistence
+✓ Integrated browser preview for real-time web development
+✓ Added command palette for quick file search and actions
+✓ Implemented file system operations (create, rename, delete)
+
+**Your IDE is ready!** Open a folder to start coding.`,
+    },
+    {
+      title: "Customize and automate",
+      content: `Since it's your IDE, you can add any tool or integration you need to stay in the flow.`,
+      prompts: [
+        {
+          label: "Add terminal integration",
+          content: "Add an integrated terminal that runs in the bottom panel",
+        },
+        {
+          label: "Add Git status",
+          content: "Show Git status indicators in the file tree and gutter",
+        },
+        {
+          label: "Add AI pair programmer",
+          content:
+            "Integrate a chat panel that can see my code and help me write functions",
+        },
+      ],
+    },
+    {
+      title: "Tips for best results",
+      content: `**Leverage Monaco's power**
+The editor supports everything from IntelliSense to multiple cursors. Moldable configures it for your primary languages automatically.
+
+**Use the Browser Preview**
+For web projects, the integrated preview is much faster than switching windows. It supports hot reloading out of the box.
+
+**Keep it focused**
+Don't add every feature at once. Start with the core tools you use daily and add specialized panels as you need them.`,
+    },
+  ],
+  relatedSlugs: ["build-a-git-client", "build-programmatic-videos-with-remotion"],
+};
+
 // Use cases data
 export const useCases: UseCase[] = [
   meetingNotesUseCase,
@@ -808,6 +891,7 @@ export const useCases: UseCase[] = [
   timeTrackerUseCase,
   affirmationsUseCase,
   gitUseCase,
+  codeEditorUseCase,
 ];
 
 // Helper to get a use case by slug

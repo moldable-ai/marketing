@@ -157,6 +157,23 @@ const gitApp: App = {
 - Lets me switch between repositories`,
 };
 
+const codeApp: App = {
+  id: "code",
+  name: "Code Editor",
+  description:
+    "A full-featured IDE with a file tree, multi-tab editor, terminal, and live browser preview",
+  icon: "/apps/code-icon.png",
+  image: "/apps/code.png",
+  category: "developer",
+  samplePrompt: `Build me a code editor app that:
+- Has a file tree to navigate projects
+- Supports multiple tabs with syntax highlighting using Monaco
+- Includes a command palette for quick actions
+- Has an integrated browser preview for web projects
+- Supports file operations like create, rename, and delete
+- Persists open tabs and project state`,
+};
+
 export const apps: App[] = [
   meetingsApp,
   remotionApp,
@@ -167,6 +184,7 @@ export const apps: App[] = [
   timeTrackerApp,
   affirmationsApp,
   gitApp,
+  codeApp,
 ];
 
 // Helper to get an app by id/slug
