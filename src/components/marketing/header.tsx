@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Apps", href: "/apps" },
   { label: "Use Cases", href: "/use-cases" },
+  { label: "Gateway", href: "/gateway" },
   { label: "Features", href: "/#features" },
   { label: "GitHub", href: "https://github.com/moldable-ai/moldable" },
 ];
