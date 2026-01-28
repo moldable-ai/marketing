@@ -10,14 +10,6 @@ const footerSections = [
     ],
   },
   {
-    heading: "Gateway",
-    links: [
-      { label: "Remote Access", href: "/gateway" },
-      { label: "Docs", href: "https://docs.moldable.sh" },
-      { label: "Source", href: "https://github.com/moldable-ai/gateway" },
-    ],
-  },
-  {
     heading: "Developers",
     links: [
       { label: "GitHub", href: "https://github.com/moldable-ai/moldable" },
@@ -39,7 +31,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-muted/30">
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-8">
         {/* Main footer content */}
-        <div className="grid gap-12 md:grid-cols-6">
+        <div className="grid gap-12 md:grid-cols-5">
           {/* Brand column */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2">

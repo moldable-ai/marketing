@@ -51,13 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
 
-    {
-      url: `${APP_URL}/gateway`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-
     // ========================================
     // Legal pages
     // ========================================
